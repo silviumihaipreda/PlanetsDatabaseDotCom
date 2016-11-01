@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html ng-app="planetsDatabaseDotComApplication">
+<head>
+    <title>PlanetsDatabase.com</title>
+    <meta charset="utf-8" />
+    <link href="Content/site.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+<body ng-controller="planetsDatabaseDotComController as planetsCtrl">
+    <nav class="navbar navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>PlanetsDatabase.com</h1>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <h3 class="">
+                    Welcome to PlanetDatabase.com
+                </h3>
+                <h3>
+                    Please see the list of planets in
+                    our solar system on the right
+                    hand side.
+                </h3>
+            </div>
+            <div class="col-xs-12  col-sm-6">
+                <ul ng-repeat="planet in planets" class="list-group">
+                    <li class="list-group-item" ng-click="showDetails = !showDetails"><p class="text-center">{{planet.name}}</p></li>
+                    <li class="list-group-item" ng-show="showDetails"><p class="text-center">Distance from the sun: {{planet.distance}} km</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="angular_app/controller/planetsDatabaseDotComController.js"></script>
+    <script src="angular_app/planetsDatabaseDotComApplication.js"></script>
+</body>
+</html>
